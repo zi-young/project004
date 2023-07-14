@@ -21,6 +21,11 @@
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+      <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    
     <script src="./js/jquery-3.7.0.min.js"></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/script.js" defer></script>
@@ -39,7 +44,7 @@
                 <div class="mobile-modal-menu-bar">
                     <span class="modal-logoBt-wrap">
                         <a href="#" class="logoBt" title="logo">
-                            <img src="./img/logo-icon-dh.png" alt="logo">
+                            <img src="./img/logoW.svg" alt="logo">
                         </a>
                     </span>
                     <span class="modal-appBar-wrap">
@@ -97,38 +102,34 @@
                         </a>
                     </span>
                 </div>
-                <aside>
-                    <span>
-                        <a href="#" class="joinBt" title="joinBt">Join</a>
-                    </span>
-                    <span>
-                        <i>|</i>
-                    </span>
-                    <span><a href="#" class="LoginBt" title="Login">Login</a></span>
-                    <span><i>|</i></span>
-                    <span><a href="#" class="SubscribeBt" title="Subscribe">Subscribe</a></span>
-                </aside>
                 <div class="header-logoNav">
-                    <h1><a href="#" class="logoBt" title="logo"><img src="./img/logo.png" alt="logo"></a></h1>
+                    <h1><a href="#" class="logoBt" title="logo"><img src="./img/logoW.svg" alt="logo"></a></h1>
                     <nav id="nav">
-                        <span><a href="#" class="mainBt" title="search"><i class="fas fa-search"></i></a></span>
-                        <span><a href="#" class="mainBt" title="DEALS">DEALS</a></span>
-                        <span><a href="#" class="mainBt addMainBt" title="ORIGINAL EXPERIENCES">ORIGINAL EXPERIENCES</a></span>
-                        <span><a href="#" class="mainBt" title="CULTURE">CULTURE</a></span>
-                        <span><a href="#" class="mainBt" title="GALLERY">GALLERY</a></span>
-                        <span><a href="#" class="mainBt" title="STORE">STORE</a></span>
+                        <span><a href="#" class="mainBt" title="COMPANY">COMPANY</a></span>
+                        <span><a href="#" class="mainBt addMainBt" title="INVESTORS">INVESTORS</a></span>
+                        <span><a href="#" class="mainBt" title="NEWS">NEWS</a></span>
+                        <span><a href="#" class="mainBt" title="CAREERS">CAREERS</a></span>
                     </nav>
+                    <aside class="lang">
+                        <div class="lang-bg"></div>
+                        <div class="active">
+                            <span>KOR</span>
+                        </div>
+                        <ul>
+                            <li>ENG</li>
+                            <li>CHN</li>
+                            <li>JPN</li>
+                        </ul>
+                    </aside>
                 </div>
             </div>  
         </header>
         <main id="main">
             <section id="section1">
-
                 <div>
                     <div class="m-video">
-                        <video id="mainVideo" autoplay muted poster="./img/maxresdefault.webp">
-                            <source src="./video/NewJeans (뉴진스) 'Super Shy' Official MV.mp4"">
-                            <!-- <iframe src="./video/NewJeans (뉴진스) 'Super Shy' Official MV.mp4" allow="autoplay" id="audio" style="display:none"></iframe> -->
+                        <video id="mainVideo" muted poster="./img/maxresdefault.webp">
+                            <source src="./video/NewJeans (뉴진스) 'Super Shy' Official MV.mp4">
                         </video>
                     </div>
                     <div class="m-again">
@@ -137,7 +138,7 @@
                                 <h2><a href="javascript:" class="sharevideo">share video</a></h2>
                             </li>
                             <li>
-                               <i></i>
+                            <i></i>
                             </li>
                             <li>
                                 <h3><a href="javascript:" class="watchagain">watch again</a></h3>
@@ -161,7 +162,7 @@
                         </div>
                         <div class="m-icon-footer-right">
                             <ul>
-                                <li><span><a href="javascript:" class="playPauseIcon" title="palyPuaseIcon"><i class="fas fa-pause"></i></a></span></li>
+                                <li><span><a href="javascript:" class="playPauseIcon" title="palyPuaseIcon"><i class="fas fa-play"></i></a></span></li>
                                 <li><span><a href="javascript:" class="mutedIcon" title="sound on/off"><i class="fas fa-volume-mute"></i></a></span></li>
                             </ul>
                         </div>
@@ -169,32 +170,41 @@
                 </div>
             </section>
             <section id="section2">
-                <div>
-                    <ul>
-                        <li>
-                            <div>
-                                <div class="section2-title">
-                                    <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                                </div>
-                                <div class="section2-content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cumque quidem quod quaerat consequuntur, sit qui! Id laboriosam quia qui labore omnis nemo sunt, iure quae laudantium, laborum voluptate accusantium?</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <div class="section2-title">
-                                    <h2>laborum voluptate accusantium</h2>
-                                </div>
-                                <div class="section2-content">
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, natus porro ducimus in tempore voluptas doloribus minima maiores numquam optio?</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="./img/Simg1.webp" alt="SImg">
+                      </div>
+                      <div class="swiper-slide">
+                         <img src="./img/Simg2.webp" alt="SImg">
+                      </div>
+                      <div class="swiper-slide">
+                         <img src="./img/Simg3.webp" alt="SImg">
+                      </div>
+                      <div class="swiper-slide">
+                         <img src="./img/Simg4.webp" alt="SImg">
+                      </div>
+                      <div class="swiper-slide">
+                         <img src="./img/Simg5.webp" alt="SImg">
+                      </div>
+                      <div class="swiper-slide">
+                         <img src="./img/Simg6.webp" alt="SImg">
+                      </div>
+                      <div class="swiper-slide">
+                         <img src="./img/Simg7.webp" alt="SImg">
+                      </div>
+                      <div class="swiper-slide">
+                         <img src="./img/Simg8.webp" alt="SImg">
+                      </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </section>
-            <section id="section3">
+            <section id="section3" style="display: none;">
                 <div>
                     <h2 class="ir_so">Gallery</h2>
                     <div class="tabMenu">
@@ -209,7 +219,7 @@
                     </div>
                     <div class="gallery">
                         <ul class="gallery-wrap">
-<!--                             <li>
+                           <li>
                                 <div>
                                     <a href="javascript:" class="galleryBt">
                                         <span class="gallery-video">

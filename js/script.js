@@ -2,11 +2,11 @@ let winW=$(window).innerWidth();
 let winH=$(window).innerHeight();
 let vidW=$('#mainVideo').innerWidth();
 let vidH=$('#mainVideo').innerHeight();
-let videoPlay='on'; //켜진 상태
+let videoPlay='off'; //켜진 상태
 let soundMuted='off'; //꺼진 상태
 
 
-$('#mainVideo').get(0).autoplay=true;
+$('#mainVideo').get(0).autoplay=false;
 $('#mainVideo').get(0).loop=0; 
 $('#mainVideo').get(0).muted=true;
 
@@ -39,19 +39,31 @@ function videoResizeFn(){
 
 $('.m-again').hide();
 //정지버튼
+// $('.playPauseIcon').on({click:function(){
+//     if(videoPlay==='on'){ //비디오가 켜진상태와 같으면
+//         videoPlay='off';
+//         $('#mainVideo').get(0).pause();
+//         $(this).find('i').attr('class', 'fas fa-play'); //내가 선택한 요소 하위에있는 i를 찾아서 class속성을가져옴
+//     }else{ //꺼진상태
+//         videoPlay='on'
+//         $('#mainVideo').get(0).play();
+//         $(this).find('i').attr('class', 'fas fa-pause'); //다시 pause 아이콘으로 바꿔
+//         $('.m-again').hide();
+//     }
+// }});
+
 $('.playPauseIcon').on({click:function(){
     if(videoPlay==='on'){ //비디오가 켜진상태와 같으면
-        videoPlay='off';
-        $('#mainVideo').get(0).pause();
-        $(this).find('i').attr('class', 'fas fa-play'); //내가 선택한 요소 하위에있는 i를 찾아서 class속성을가져옴
+         videoPlay='off';
+         $('#mainVideo').get(0).pause();
+         $(this).find('i').attr('class', 'fas fa-play');
     }else{ //꺼진상태
         videoPlay='on'
-        $('#mainVideo').get(0).play();
-        $(this).find('i').attr('class', 'fas fa-pause'); //다시 pause 아이콘으로 바꿔
-        $('.m-again').hide();
+         $('#mainVideo').get(0).play();
+         $(this).find('i').attr('class', 'fas fa-pause'); //다시 pause 아이콘으로 바꿔
+         $('.m-again').hide();
     }
 }});
-
 
 //스페이스 누르면 멈추기
 $(document).keypress(function(e) {
@@ -87,7 +99,7 @@ $('.mutedIcon').on({click:function(){
 $('.watchagain').on({click:function(){
     videoPlay='on' //꺼진상태면 플레이되게끔
     $('#mainVideo').get(0).play();
-    $(this).find('i').attr('class', 'fas fa-pause'); //다시 pause 아이콘으로 바꿔
+    $(this).find('i').attr('class', 'fas fa-play'); //다시 pause 아이콘으로 바꿔
     $('.m-again').hide();
 }});
 
@@ -101,7 +113,66 @@ function videoTimeCountFn(){
     if($('#mainVideo').get(0).ended===true){ //비디오가 정지되면
         $('.m-again').show();
         videoPlay = 'off';
-        $('.playPauseIcon').find('i').attr('class','fas fa-play') //플레이버튼바뀌게
+        $('.playPauseIcon').find('i').attr('class','fas fa-pause') //플레이버튼바뀌게
         clearInterval(setId)
     }
 }
+
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,  
+  slidesPerGroup: 3,
+  spaceBetween: 20,
+  centeredSlides: false,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
+
+  // autoHeight : true,  // 현재 활성 슬라이드높이 맞게 높이조정
+
+
+  autoplay : {  // 자동 슬라이드 설정 , 비 활성화 시 false
+    delay : 3000,   // 시간 설정
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+});
+
+
+// let appendNumber = 8;
+//     let prependNumber = 3;
+//     const swiper = new Swiper('.swiper', {
+//       slidesPerView: 3,
+//       slidesPerGroup: 1,
+//       centeredSlides: false,
+//       spaceBetween: 30,
+//       pagination: {
+//         el: '.swiper-pagination',
+//         type: 'fraction',
+//       },
+//       navigation: {
+//         nextEl: '.swiper-button-next',
+//         prevEl: '.swiper-button-prev',
+//       },
+//       virtual: {
+//         slides: (function () {
+//           const slides = [];
+//           for (var i = 0; i < 8; i += 1) {
+//             slides.push('Slide ' + (i + 1));
+//           }
+//           return slides;
+//         })(),
+//       },
+//     });
+
+
