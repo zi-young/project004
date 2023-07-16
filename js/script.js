@@ -121,21 +121,21 @@ function videoTimeCountFn(){
 
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,  
-  slidesPerGroup: 3,
+  slidesPerGroup: 1,
   spaceBetween: 20,
   centeredSlides: false,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
   freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
 
   // autoHeight : true,  // 현재 활성 슬라이드높이 맞게 높이조정
 
 
-  autoplay : {  // 자동 슬라이드 설정 , 비 활성화 시 false
-    delay : 3000,   // 시간 설정
-  },
+  // autoplay : {  // 자동 슬라이드 설정 , 비 활성화 시 false
+  //   delay : 3000,   // 시간 설정
+  // },
 
   pagination: {
     el: ".swiper-pagination",
@@ -147,32 +147,5 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: '.swiper-button-prev',
     },
 });
-
-
-// let appendNumber = 8;
-//     let prependNumber = 3;
-//     const swiper = new Swiper('.swiper', {
-//       slidesPerView: 3,
-//       slidesPerGroup: 1,
-//       centeredSlides: false,
-//       spaceBetween: 30,
-//       pagination: {
-//         el: '.swiper-pagination',
-//         type: 'fraction',
-//       },
-//       navigation: {
-//         nextEl: '.swiper-button-next',
-//         prevEl: '.swiper-button-prev',
-//       },
-//       virtual: {
-//         slides: (function () {
-//           const slides = [];
-//           for (var i = 0; i < 8; i += 1) {
-//             slides.push('Slide ' + (i + 1));
-//           }
-//           return slides;
-//         })(),
-//       },
-//     });
 
 
