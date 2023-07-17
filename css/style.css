@@ -380,7 +380,7 @@ a {
   color: rgba(255, 255, 255, 0.6);
 }
 #section1 > div .m-icon-footer {
-  padding: 0 90px;
+  padding: 0 190px;
   box-sizing: border-box;
   position: absolute;
   z-index: 2;
@@ -459,7 +459,7 @@ a {
   position: absolute;
   top: var(--carousel-arrow-top-position, 55%);
   transform: translate3d(0px, -50%, 0px) scaleX(1);
-  left: var(--carousel-arrow-side-position, 500px);
+  left: var(--carousel-arrow-side-position, 30%);
   z-index: var(--carousel-arrow-z-index, 1);
 }
 #section2 .swiper .swiper-button-prev::after {
@@ -473,7 +473,7 @@ a {
   position: absolute;
   top: var(--carousel-arrow-top-position, 55%);
   transform: translate3d(0px, -50%, 0px) scaleX(-1);
-  left: var(--carousel-arrow-side-position, 1170px);
+  left: var(--carousel-arrow-side-position, 69%);
   z-index: var(--carousel-arrow-z-index, 1);
 }
 

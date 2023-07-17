@@ -130,7 +130,7 @@ var swiper = new Swiper(".mySwiper", {
   // },
   freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
 
-  // autoHeight : true,  // 현재 활성 슬라이드높이 맞게 높이조정
+  autoHeight : true,  // 현재 활성 슬라이드높이 맞게 높이조정
 
 
   // autoplay : {  // 자동 슬라이드 설정 , 비 활성화 시 false
