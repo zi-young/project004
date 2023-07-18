@@ -38,19 +38,7 @@ function videoResizeFn(){
 
 
 $('.m-again').hide();
-//정지버튼
-// $('.playPauseIcon').on({click:function(){
-//     if(videoPlay==='on'){ //비디오가 켜진상태와 같으면
-//         videoPlay='off';
-//         $('#mainVideo').get(0).pause();
-//         $(this).find('i').attr('class', 'fas fa-play'); //내가 선택한 요소 하위에있는 i를 찾아서 class속성을가져옴
-//     }else{ //꺼진상태
-//         videoPlay='on'
-//         $('#mainVideo').get(0).play();
-//         $(this).find('i').attr('class', 'fas fa-pause'); //다시 pause 아이콘으로 바꿔
-//         $('.m-again').hide();
-//     }
-// }});
+
 
 $('.playPauseIcon').on({click:function(){
     if(videoPlay==='on'){ //비디오가 켜진상태와 같으면
@@ -119,33 +107,35 @@ function videoTimeCountFn(){
 }
 
 
+
+
 var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,  
-  slidesPerGroup: 1,
-  spaceBetween: 20,
-  centeredSlides: false,
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false,
-  // },
-  freeMode : false, // 슬라이드 넘길 때 위치 고정 여부
-
-  autoHeight : true,  // 현재 활성 슬라이드높이 맞게 높이조정
-
-
-  // autoplay : {  // 자동 슬라이드 설정 , 비 활성화 시 false
-  //   delay : 3000,   // 시간 설정
-  // },
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  navigation: {
+    slidesPerView: 3,  
+    slidesPerGroup: 1,
+    spaceBetween: 20,
+    centeredSlides: false,
+    freeMode: false, // 슬라이드 넘길 때 위치 고정 여부
+    autoHeight: true, // 현재 활성 슬라이드높이 맞게 높이조정
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-});
-
-
+    on: {
+      slideChange: function () {
+        var activeIndex = this.realIndex; // 현재 활성 슬라이드의 인덱스
+        var slideTextElements = document.querySelectorAll('.swiper-slide .slideText');
+  
+        for (var i = 0; i < slideTextElements.length; i++) {
+          if (i === activeIndex + 1) {
+            slideTextElements[i].style.display = 'block'; // 활성 슬라이드의 다음 슬라이드에 위치한 slideText를 보여줌
+          } else {
+            slideTextElements[i].style.display = 'none'; // 다른 슬라이드의 slideText를 숨김
+          }
+        }
+      }
+    }
+  });

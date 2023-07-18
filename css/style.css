@@ -1,16 +1,31 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Roboto&display=swap");
-html {
-  height: 100%;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 body {
+  cursor: url("../img/cursor-see.png"), auto;
   background: #222;
   color: #fff;
   height: 100%;
   font-family: "Kanit", sans-serif;
 }
 
-a {
+p {
+  font-family: "Roboto", "Noto Sans KR", "Malgun gothic", "맑은고딕", "Dotum", "돋움", "arial";
+}
+
+header, footer, a, .slide:hover {
+  cursor: url("../img/cursor-pointer.png "), auto;
+}
+
+.swiper-slide:hover {
+  cursor: url("../img/cursor-hand.png"), auto;
+}
+
+html {
+  height: 100%;
+}
+
+x a {
   color: #fff;
 }
 
@@ -422,19 +437,16 @@ a {
 }
 #section2 .swiper {
   position: relative;
-  margin: 20px auto;
-}
-#section2 .swiper .swiper-wrapper {
-  height: 308px;
+  margin: 20px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #section2 .swiper .swiper-wrapper .swiper-slide {
   box-sizing: border-box;
   text-align: center;
   font-size: 18px;
   background: #222;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #section2 .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
@@ -444,6 +456,38 @@ a {
   position: relative;
   margin: 20px auto 0px;
   width: var(--carousel-width);
+  color: #fff;
+}
+#section2 .swiper .swiper-wrapper .slideText a.lkguis {
+  color: #fff;
+  display: block;
+  text-align: center;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  transition: all 300ms ease-in-out 1s;
+  padding: 0px 20px;
+}
+#section2 .swiper .swiper-wrapper .slideText a.lkguis h3 {
+  font-size: 22px;
+  color: #fff;
+  line-height: 105%;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#section2 .swiper .swiper-wrapper .slideText a.lkguis p {
+  padding: 0px;
+  margin: 10px 0px 0px;
+  color: rgb(173, 177, 184);
+  font-size: 16px;
+  line-height: 143%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 #section2 .swiper .swiper-button-next {
   display: block;
@@ -457,7 +501,7 @@ a {
   width: 18px;
   height: 36px;
   position: absolute;
-  top: var(--carousel-arrow-top-position, 55%);
+  top: var(--carousel-arrow-top-position, 45%);
   transform: translate3d(0px, -50%, 0px) scaleX(1);
   left: var(--carousel-arrow-side-position, 30%);
   z-index: var(--carousel-arrow-z-index, 1);
@@ -471,7 +515,7 @@ a {
   width: 18px;
   height: 36px;
   position: absolute;
-  top: var(--carousel-arrow-top-position, 55%);
+  top: var(--carousel-arrow-top-position, 45%);
   transform: translate3d(0px, -50%, 0px) scaleX(-1);
   left: var(--carousel-arrow-side-position, 69%);
   z-index: var(--carousel-arrow-z-index, 1);
@@ -507,94 +551,42 @@ a {
   background: #2a2f34;
   color: #fff;
 }
-#section3 > div .gallery .gallery-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  overflow: hidden;
-}
-#section3 > div .gallery .gallery-wrap li {
-  flex-basis: 33.33333%;
-  overflow: hidden;
-}
-#section3 > div .gallery .gallery-wrap li div {
-  width: 100%;
-}
-#section3 > div .gallery .gallery-wrap li div a {
-  display: block;
+#section3 > div .gallery {
   position: relative;
-  width: 100%;
 }
-#section3 > div .gallery .gallery-wrap li div a .gallery-video {
-  display: block;
-  position: relative;
-  width: 100%;
-  z-index: 1;
+#section3 > div .gallery .smooth-wrapper {
+  height: 100vh;
 }
-#section3 > div .gallery .gallery-wrap li div a .gallery-video video {
+#section3 > div .gallery .smooth-wrapper .smooth-content .intro .pad {
+  translate: none;
+  rotate: none;
+  scale: none;
+  height: 588.5px;
+  transform-origin: 100% 0%;
+  transform: translate(0px, 0px);
+  max-width: 800px;
+  top: 14vh;
+  right: 5%;
   width: 100%;
-  transform: scale(1.01);
-  transition: 0.3s;
-  display: block;
-}
-#section3 > div .gallery .gallery-wrap li div a .galleryCap {
-  display: block;
-  z-index: 2;
   position: absolute;
-  top: 0;
-  left: 0;
+}
+#section3 > div .gallery .smooth-wrapper .smooth-content .intro .pad img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0);
-  transition: 0.3s;
 }
-#section3 > div .gallery .gallery-wrap li div a .gallery-title {
+#section3 > div .gallery .smooth-wrapper .smooth-content .intro-title {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 8.3%;
+  transform: translate(0px, -65%);
+  font-size: 70px;
+  line-height: 100px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
   z-index: 3;
-  transition: 0.3s;
-  opacity: 0;
-}
-#section3 > div .gallery .gallery-wrap li div a .gallery-title span {
-  transition: 0.3s;
-  display: block;
-  padding-bottom: 20px;
-  margin-top: 15px;
-  opacity: 0;
-}
-#section3 > div .gallery .gallery-wrap li div a .gallery-title span strong {
-  color: #fff;
-  font-size: 21px;
-}
-#section3 > div .gallery .gallery-wrap li div a .gallery-title span b {
-  color: #fff;
-  font-size: 14px;
-}
-#section3 > div .gallery .gallery-wrap li div a .gallery-title span .exploreBt {
-  color: #fff;
-}
-#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title {
-  opacity: 1;
-}
-#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title > span:nth-child(1) {
-  opacity: 1;
-  transition: 0.3s;
-}
-#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title > span:nth-child(2) {
-  opacity: 1;
-  transition: 1s;
-}
-#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title > span:nth-child(3) {
-  opacity: 1;
-  transition: 0.5s;
-}
-#section3 > div .gallery .gallery-wrap li:hover div a .gallery-video video {
-  transform: scale(1.2);
-}
-#section3 > div .gallery .gallery-wrap li:hover div a .galleryCap {
-  background: rgba(0, 0, 0, 0.7);
 }
 #section3 > div .gallery .loadMore {
   width: 100%;
