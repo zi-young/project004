@@ -139,3 +139,18 @@ var swiper = new Swiper(".mySwiper", {
       }
     }
   });
+
+
+
+// 스크롤 내릴때 배경색
+
+window.addEventListener('scroll', function() {
+  var body = document.body;
+  var scrollY = window.scrollY;
+  
+  if (scrollY > 1000) {
+    body.classList.add('scrolled');
+  } else {
+    body.classList.remove('scrolled');
+  }
+});

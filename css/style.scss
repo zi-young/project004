@@ -1,9 +1,9 @@
 @charset "utf-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&family=Edu+TAS+Beginner&family=Roboto&display=swap');
 
-$bg-color:#222;
+$bg-color:#000;
 $white-color:#fff;
 
 @mixin mq($screen-width){
@@ -14,12 +14,18 @@ $white-color:#fff;
     }
 }   
 
+body.scrolled {
+    background: #384244;
+    transition: background- 1s ease;
+}
+
 body {
     cursor: url('../img/cursor-see.png'), auto;
-    background: $bg-color;
     color: $white-color;
+    background: $bg-color;
     height: 100%;
     font-family: 'Kanit', sans-serif;
+    transition: background-color 1s ease;
 }
 
 p {
@@ -419,7 +425,7 @@ a{color: $white-color}
 // #section2
 
 #section2{
-    margin: 100px 0;
+    margin: 140px 0;
     .swiper {
         position: relative;
         margin: 20px 30px;
@@ -432,8 +438,6 @@ a{color: $white-color}
                 box-sizing: border-box;
                 text-align: center;
                 font-size: 18px;
-                background: #222;
-
                 img{
                     width: 100%;
                     border-radius: 20px;
@@ -444,6 +448,7 @@ a{color: $white-color}
                 margin: 20px auto 0px;
                 width: var(--carousel-width);
                 color: #fff;
+                
                 a.lkguis{
                     color: #fff;
                     display: block;
@@ -548,8 +553,15 @@ a{color: $white-color}
         .gallery{
             position: relative;
             .smooth-wrapper{
-                height: 100vh;
-                img{}
+                height: 800px;
+                img{
+                    width: 100%;
+                    inset: 0px;
+                    color: transparent;
+                    position: absolute;
+                    top: 50px;
+                    left: -100px;
+                }
                 .smooth-content{
                     .intro{
                         .pad{
@@ -560,7 +572,7 @@ a{color: $white-color}
                             transform-origin: 100% 0%;
                             transform: translate(0px, 0px);
                             max-width: 800px;
-                            top: 14vh;
+                            top: 12vh;
                             right: 5%;
                             width: 100%;
                             position: absolute;
@@ -572,96 +584,123 @@ a{color: $white-color}
                                 height: 100%;
                             }
                             video{
-                 
                             }
                         }
                     }
                     .intro-title{
+                        min-width:11px;
+                        white-space: nowrap;
+                        margin: 0;
+                        font-weight: bold;
+                        color: transparent;
                         position: absolute;
-                        top: 50%;
-                        left: 8.3%;
-                        transform: translate(0px, -65%);
-                        font-size: 70px;
-                        line-height: 100px;
-                        font-weight: 700;
-                        color: rgb(255, 255, 255);
-                        z-index: 3;
+                        top:400px;
+                        left:500px;
+                        transform: translate(-50%, -50%);
                         p{}
+                    }
+                    .intro-title::before {
+                        font-family: 'Chakra Petch', sans-serif;
+                        content: " Jung Kook 'Seven' ";
+                        font-size: 70px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        color: white;
+                        overflow: hidden;
+                        border-right: 1px solid black;
+                        animation: typing 5s steps(31) infinite;
+                    }
+                    
+                    @keyframes typing{
+                        0% {
+                          width: 0%;
+                        }
+                        50% {
+                          width: 100%;
+                        }
+                        100% {
+                          width: 0%;
+                        }
                     }
                 }
             }
-            // .gallery-wrap{
-            //     display: flex;
-            //     flex-wrap: wrap;
-            //     width: 100%;
-            //     overflow: hidden;
-            //     li{
-            //         flex-basis: 33.33333%;
-            //         overflow: hidden;
-            //         div{
-            //             width: 100%;
-            //             a{
-            //                 display: block;
-            //                 position: relative;
-            //                 width: 100%;
-            //                 .gallery-video{
-            //                     display: block;
-            //                     position: relative;
-            //                     width: 100%;
-            //                     z-index: 1;
-            //                     video{
-            //                         width: 100%;                                    
-            //                         transform: scale(1.01);
-            //                         transition: .3s;
-            //                         display: block;
-            //                     }
-            //                 }
-            //                 .galleryCap{
-            //                     display: block;
-            //                     z-index: 2;
-            //                     position: absolute;
-            //                     top: 0;
-            //                     left: 0;
-            //                     width: 100%;
-            //                     height: 100%;
-            //                     background: rgba(0,0,0,0);
-            //                     transition: .3s;
-            //                 }
-            //                 .gallery-title{
-            //                     position: absolute;
-            //                     top: 50%;
-            //                     left: 50%;
-            //                     transform: translate(-50%, -50%);
-            //                     z-index: 3;
-            //                     transition: .3s;
-            //                     opacity: 0;
-            //                     span{
-            //                         transition: .3s;
-            //                         display: block;
-            //                         padding-bottom: 20px;
-            //                         margin-top: 15px;
-            //                         opacity: 0;
-            //                         strong{
-            //                             color: #fff;
-            //                             font-size: 21px;
-            //                         }
-            //                         b{
-            //                             color: #fff;
-            //                             font-size: 14px;
-            //                         }
-            //                         .exploreBt{color: #fff;}
-            //                     }
-            //                 }
-            //                 &:hover .gallery-title{opacity: 1;}
-            //                 &:hover .gallery-title>span:nth-child(1){opacity: 1; transition: .3s;}
-            //                 &:hover .gallery-title>span:nth-child(2){opacity: 1; transition: 1s;}
-            //                 &:hover .gallery-title>span:nth-child(3){opacity: 1; transition: .5s;}
-            //             }
-            //         }
-            //         &:hover div a .gallery-video video{transform: scale(1.2);}
-            //         &:hover div a .galleryCap{background: rgba(0,0,0,.7);}
-            //     }
-            // }
+            .gallery-wrap{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                overflow: hidden;
+                li{
+                    flex-basis: 33.33333%;
+                    overflow: hidden;
+                    height: 267px;
+                    div{
+                        width: 100%;
+                        a{
+                            display: block;
+                            position: relative;
+                            width: 100%;
+                            .gallery-video{
+                                display: block;
+                                position: relative;
+                                width: 100%;
+                                z-index: 1;
+                                background-size: cover;
+                                video{
+                                    width: 100%;                                    
+                                    transform: scale(1.01);
+                                    transition: .3s;
+                                    display: block;
+                                }
+                            }
+                            .galleryCap{
+                                display: block;
+                                z-index: 2;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: rgba(0,0,0,0);
+                                transition: .3s;
+                            }
+                            .gallery-title{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                z-index: 3;
+                                transition: .3s;
+                                opacity: 0;
+                                span{
+                                    transition: .3s;
+                                    display: block;
+                                    padding-bottom: 20px;
+                                    margin-top: 15px;
+                                    opacity: 0;
+                                    strong{
+                                        color: #fff;
+                                        font-size: 21px;
+                                    }
+                                    b{
+                                        color: #fff;
+                                        font-size: 14px;
+                                    }
+                                    .exploreBt{color: #fff;}
+                                }
+                            }
+                            &:hover .gallery-title{opacity: 1;}
+                            &:hover .gallery-title>span:nth-child(1){opacity: 1; transition: .3s;}
+                            &:hover .gallery-title>span:nth-child(2){opacity: 1; transition: 1s;}
+                            &:hover .gallery-title>span:nth-child(3){opacity: 1; transition: .5s;}
+                        }
+                    }
+                    &:hover div a .gallery-video video{transform: scale(1.2);}
+                    &:hover div a .galleryCap{background: rgba(0,0,0,.7);}
+                }
+            }
             .loadMore{
                 width: 100%;
                 padding: 80px 0;
@@ -685,6 +724,28 @@ a{color: $white-color}
             }
         }
     }
+}
+  
+// .title {
+// position: absolute;
+// left: 0;
+// top: 0;
+// width: 100%;
+// z-index: 1;
+// line-height: 300px;
+// text-align: center;
+// transform: translate3d(0, 0, 0);
+// color: white;
+// text-transform: uppercase;
+// font-family: 'Playfair Display', serif;
+// letter-spacing: .4em;
+// font-size: 24px;
+// text-shadow: 0 1px 0 rgba(black, .1);
+// text-indent: .3em;
+// }
+@keyframes drift {
+from { transform: rotate(0deg); }
+from { transform: rotate(360deg); }
 }
 
 #footer{

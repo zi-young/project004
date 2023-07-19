@@ -1,12 +1,18 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,500&family=Edu+TAS+Beginner&family=Roboto&display=swap");
+body.scrolled {
+  background: #384244;
+  transition: background- 1s ease;
+}
+
 body {
   cursor: url("../img/cursor-see.png"), auto;
-  background: #222;
   color: #fff;
+  background: #000;
   height: 100%;
   font-family: "Kanit", sans-serif;
+  transition: background-color 1s ease;
 }
 
 p {
@@ -40,7 +46,7 @@ x a {
   left: -100%;
   width: 100%;
   height: 100vh;
-  background: #222;
+  background: #000;
   z-index: 4;
 }
 .mobile-modal-menu > div {
@@ -433,7 +439,7 @@ x a {
 }
 
 #section2 {
-  margin: 100px 0;
+  margin: 140px 0;
 }
 #section2 .swiper {
   position: relative;
@@ -446,7 +452,6 @@ x a {
   box-sizing: border-box;
   text-align: center;
   font-size: 18px;
-  background: #222;
 }
 #section2 .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
@@ -555,7 +560,15 @@ x a {
   position: relative;
 }
 #section3 > div .gallery .smooth-wrapper {
-  height: 100vh;
+  height: 800px;
+}
+#section3 > div .gallery .smooth-wrapper img {
+  width: 100%;
+  inset: 0px;
+  color: transparent;
+  position: absolute;
+  top: 50px;
+  left: -100px;
 }
 #section3 > div .gallery .smooth-wrapper .smooth-content .intro .pad {
   translate: none;
@@ -565,7 +578,7 @@ x a {
   transform-origin: 100% 0%;
   transform: translate(0px, 0px);
   max-width: 800px;
-  top: 14vh;
+  top: 12vh;
   right: 5%;
   width: 100%;
   position: absolute;
@@ -578,15 +591,131 @@ x a {
   height: 100%;
 }
 #section3 > div .gallery .smooth-wrapper .smooth-content .intro-title {
+  min-width: 11px;
+  white-space: nowrap;
+  margin: 0;
+  font-weight: bold;
+  color: transparent;
+  position: absolute;
+  top: 400px;
+  left: 500px;
+  transform: translate(-50%, -50%);
+}
+#section3 > div .gallery .smooth-wrapper .smooth-content .intro-title::before {
+  font-family: "Chakra Petch", sans-serif;
+  content: " Jung Kook 'Seven' ";
+  font-size: 70px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  overflow: hidden;
+  border-right: 1px solid black;
+  animation: typing 5s steps(31) infinite;
+}
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+#section3 > div .gallery .gallery-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+}
+#section3 > div .gallery .gallery-wrap li {
+  flex-basis: 33.33333%;
+  overflow: hidden;
+  height: 267px;
+}
+#section3 > div .gallery .gallery-wrap li div {
+  width: 100%;
+}
+#section3 > div .gallery .gallery-wrap li div a {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+#section3 > div .gallery .gallery-wrap li div a .gallery-video {
+  display: block;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  background-size: cover;
+}
+#section3 > div .gallery .gallery-wrap li div a .gallery-video video {
+  width: 100%;
+  transform: scale(1.01);
+  transition: 0.3s;
+  display: block;
+}
+#section3 > div .gallery .gallery-wrap li div a .galleryCap {
+  display: block;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: 0.3s;
+}
+#section3 > div .gallery .gallery-wrap li div a .gallery-title {
   position: absolute;
   top: 50%;
-  left: 8.3%;
-  transform: translate(0px, -65%);
-  font-size: 70px;
-  line-height: 100px;
-  font-weight: 700;
-  color: rgb(255, 255, 255);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 3;
+  transition: 0.3s;
+  opacity: 0;
+}
+#section3 > div .gallery .gallery-wrap li div a .gallery-title span {
+  transition: 0.3s;
+  display: block;
+  padding-bottom: 20px;
+  margin-top: 15px;
+  opacity: 0;
+}
+#section3 > div .gallery .gallery-wrap li div a .gallery-title span strong {
+  color: #fff;
+  font-size: 21px;
+}
+#section3 > div .gallery .gallery-wrap li div a .gallery-title span b {
+  color: #fff;
+  font-size: 14px;
+}
+#section3 > div .gallery .gallery-wrap li div a .gallery-title span .exploreBt {
+  color: #fff;
+}
+#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title {
+  opacity: 1;
+}
+#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title > span:nth-child(1) {
+  opacity: 1;
+  transition: 0.3s;
+}
+#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title > span:nth-child(2) {
+  opacity: 1;
+  transition: 1s;
+}
+#section3 > div .gallery .gallery-wrap li div a:hover .gallery-title > span:nth-child(3) {
+  opacity: 1;
+  transition: 0.5s;
+}
+#section3 > div .gallery .gallery-wrap li:hover div a .gallery-video video {
+  transform: scale(1.2);
+}
+#section3 > div .gallery .gallery-wrap li:hover div a .galleryCap {
+  background: rgba(0, 0, 0, 0.7);
 }
 #section3 > div .gallery .loadMore {
   width: 100%;
@@ -610,10 +739,18 @@ x a {
   background: #dee4e3;
 }
 
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
 #footer {
   width: 100%;
   padding: 50px 0;
-  background: #222;
+  background: #000;
 }
 #footer > div {
   width: 100%;
